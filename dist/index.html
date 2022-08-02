@@ -9,8 +9,21 @@
     <script src="./bubble.js" defer></script>
 </head>
 <body>
-    <canvas id="bg"></canvas>
-    <canvas id="cvs"></canvas>
+    <canvas id="bg" style="filter: url('#goo')"></canvas>
+    <canvas id="cvs" style="filter: url('#goo')"></canvas>
     <footer class="footer"><p class="footer__text">Some text here</p></footer>
+    <svg>
+        <defs>
+            <filter id='goo'>
+                <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur"/>
+                <feColorMatrix in="blur" mode="matrix" values=" 1 0 0 0 0 
+                                                                0 1 0 0 0
+                                                                0 0 1 0 0
+                                                                0 0 0 30 -10 "
+                                                                result="goo" />
+                <feBlend in="SourceGraphic" in2="goo"/>
+            </filter>
+        </defs>
+    </svg>
 </body>
 </html>

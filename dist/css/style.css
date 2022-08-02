@@ -9,12 +9,13 @@ body {
     background-color: #4464af;
 }
 
-#bg, #cvs {
+canvas {
     position: absolute;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
+    /* filter: url('#goo'); */
 }
 
 .footer {
